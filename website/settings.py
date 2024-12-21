@@ -34,7 +34,7 @@ DEBUG = env('DEBUG')
 
 
 ALLOWED_HOSTS = [
-    'test6-beryl-chi.vercel.app',
+    'https://test6-havwv4bsp-mohamed-sayeds-projects-bd24495c.vercel.app',
     'www.dr-mostafa-mahmoud.online',
     'localhost',
     '127.0.0.1',
