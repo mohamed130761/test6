@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+import environ
 import os
 from pathlib import Path
 
@@ -19,14 +20,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-wmq$%m^-9pa+$6wxoa^_wg4n(&n988$h58k++skjdv^_h%*a=g'
+# Initialize environment variables handler
+env = environ.Env(
+    DEBUG=(bool, False)  # Default DEBUG to False if not set
+)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Read .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-ALLOWED_HOSTS = []
+# Use environment variables
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
 
+
+ALLOWED_HOSTS = [
+    'test6-beryl-chi.vercel.app',
+    'www.dr-mostafa-mahmoud.online',
+    'localhost',
+    '127.0.0.1',
+]
 
 # Application definition
 
@@ -42,6 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,3 +137,7 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,'website/static')]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
