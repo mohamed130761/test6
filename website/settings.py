@@ -34,7 +34,7 @@ DEBUG = env('DEBUG')
 
 
 ALLOWED_HOSTS = [
-    'test6-beryl-chi.vercel.app',
+    'web-production-874d.up.railway.app',
     'www.dr-mostafa-mahmoud.online',
     'localhost',
     '127.0.0.1',
@@ -67,7 +67,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.dr-mostafa-mahmoud.online",  # Your frontend domain
-    "https://test6-beryl-chi.vercel.app",    # Your backend domain
+    "web-production-874d.up.railway.app",
+
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
