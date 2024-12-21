@@ -34,7 +34,7 @@ DEBUG = env('DEBUG')
 
 
 ALLOWED_HOSTS = [
-    'web-production-874d.up.railway.app',
+    'test6-production-f631.up.railway.app',
     'www.dr-mostafa-mahmoud.online',
     'localhost',
     '127.0.0.1',
@@ -67,7 +67,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.dr-mostafa-mahmoud.online",  # Your frontend domain
-    "web-production-874d.up.railway.app",
+    "https://test6-production-f631.up.railway.app",
 
 ]
 
